@@ -10,14 +10,9 @@
         placeholder="Add a new to do"
         @keyup.enter="addTodo"
       />
-      <button
-        class="appearance-none border-none outline-none bg-green-400 uppercase font-bold text-black text-2xl py-2 px-4 rounded-lg ml-2 cursor-pointer"
-        @click="addTodo"
-      >
-        Add
-      </button>
+      <button class="button bg-green-400" @click="addTodo">Add</button>
     </div>
-    <div class="w-full max-w-lg mt-8">
+    <div class="w-full max-w-2xl mt-8">
       <Todo
         v-for="(todo, index) in $store.state.todos"
         :key="index"
@@ -56,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-button {
-  @apply appearance-none border-none outline-none uppercase font-bold text-black text-2xl py-2 px-4 rounded-lg ml-2 cursor-pointer;
+.button {
+  @apply appearance-none border-none outline-none font-bold text-black text-2xl py-2 px-4 rounded-lg ml-2 cursor-pointer;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div :class="`todo ${todo.done ? 'is-completed' : ''}`">
-    <div>{{ todo.content }}</div>
-    <div class="button">
-      <button @click="toggleDone" class="px-2 mx-1 bg-green-400">
+    <div class="text-2xl">{{ todo.content }}</div>
+    <div class="flex justify-center">
+      <button @click="toggleDone" class="button px-2 bg-green-400">
         {{ todo.done ? "Undo" : "Done" }}
       </button>
-      <button @click="removeTodo" class="px-2 mx-1 bg-red-600 text-white">
+      <button @click="removeTodo" class="button px-2 bg-red-600 text-white">
         Delete
       </button>
     </div>
