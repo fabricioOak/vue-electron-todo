@@ -1,13 +1,18 @@
 <template>
-  <div :class="`todo ${todo.done ? 'is-completed' : ''}`">
-    <div class="text-2xl">{{ todo.content }}</div>
-    <div class="flex justify-center">
-      <button @click="toggleDone" class="button px-2 bg-green-400">
-        {{ todo.done ? "Undo" : "Done" }}
-      </button>
-      <button @click="removeTodo" class="button px-2 bg-red-600 text-white">
-        Delete
-      </button>
+  <div>
+    <div class="text-gray-500 mb-2">Criado em: {{ todo.time }}</div>
+    <div class="todo">
+      <div :class="`${todo.done ? 'is-completed' : ''}`" class="text-2xl">
+        {{ todo.content }}
+      </div>
+      <div class="flex justify-center">
+        <button @click="toggleDone" class="button px-2 bg-green-400">
+          {{ todo.done ? "Undo" : "Done" }}
+        </button>
+        <button @click="removeTodo" class="button px-2 bg-red-600 text-white">
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </template>
