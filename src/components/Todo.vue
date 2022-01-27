@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="text-gray-500 mb-2">Criado em: {{ todo.time }}</div>
+    <div class="flex justify-between items-center">
+      <div class="text-gray-500 mb-2">Criado em: {{ todo.createdAt }}</div>
+      <div v-show="todo.done" class="text-gray-500 mb-2">
+        Finalizado em: {{ todo.finishedAt }}
+      </div>
+    </div>
     <div class="todo">
       <div :class="`${todo.done ? 'is-completed' : ''}`" class="text-2xl">
         {{ todo.content }}
