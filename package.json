@@ -2,6 +2,12 @@
   "name": "vue-todo-app",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Fabrício Carvalho",
+    "email": "fcarvalho1999@gmail.com"
+  },
+  "icon": "./src/assets/todo-app.ico",
+  "description": "A simple todo app built with Vue.js, Tailwind CSS and Electron.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
