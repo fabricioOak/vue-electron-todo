@@ -10,10 +10,17 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
+app.setName("To Do App");
+
+
+
 async function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow({ show: false });
-  win.maximize();
+  const win = new BrowserWindow({
+    icon: `${__dirname}/assets/todo-app.ico`,
+    width: 800,
+    height: 600
+  });
   win.show();
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
