@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="flex justify-between items-center">
-      <div class="text-gray-500 mb-2">Criado em: {{ todo.createdAt }}</div>
+      <div class="text-gray-500 mb-2">Created at: {{ todo.createdAt }}</div>
       <div v-show="todo.done" class="text-gray-500 mb-2">
-        Finalizado em: {{ todo.finishedAt }}
+        Finished at: {{ todo.finishedAt }}
       </div>
     </div>
     <div class="todo">
@@ -11,10 +11,16 @@
         {{ todo.content }}
       </div>
       <div class="flex justify-center">
-        <button @click="toggleDone" class="button px-2 bg-green-400">
+        <button
+          @click="toggleDone"
+          class="button px-2 transiton-all duration-200 hover:bg-green-600 bg-green-400"
+        >
           {{ todo.done ? "Undo" : "Done" }}
         </button>
-        <button @click="removeTodo" class="button px-2 bg-red-600 text-white">
+        <button
+          @click="removeTodo"
+          class="button px-2 transiton-all duration-200 hover:bg-red-800 bg-red-600 text-white"
+        >
           Delete
         </button>
       </div>
