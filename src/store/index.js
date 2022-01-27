@@ -6,14 +6,18 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     todos: [],
-    time: new Date().toLocaleDateString('pt-br')
   },
   mutations: {
     loadTodos(state) {
       state.todos = JSON.parse(localStorage.getItem('todos')) || []
     },
     addTodo(state, todo) {
-      state.todos = [{ content: todo, time: state.time, done: false }, ...state.todos]
+      state.todos = [{
+        content: todo,
+        createdAt: new Date().toLocaleDateString(navigator.l, { hour: '2-digit', minute: '2-digit' }),
+        finishedAt: new Date().toLocaleDateString(navigator.l, { hour: '2-digit', minute: '2-digit' }),
+        done: false
+      }, ...state.todos]
       localStorage.setItem('todos', JSON.stringify(state.todos))
     },
     removeTodo(state, todo) {
@@ -25,7 +29,8 @@ export default new Vuex.Store({
       localStorage.setItem('todos', JSON.stringify(state.todos))
     },
     toggleTodo(state, todo) {
-      todo.done = !todo.done
+      todo.done = !todo.done,
+        todo.done ? todo.finishedAt = new Date().toLocaleDateString(navigator.l, { hour: '2-digit', minute: '2-digit' }) : todo.finishedAt = ''
       localStorage.setItem('todos', JSON.stringify(state.todos))
     }
   },
