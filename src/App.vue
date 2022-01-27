@@ -5,7 +5,7 @@
       <h1 class="text-4xl capitalize mb-2">To do list</h1>
     </div>
     <p class="mb-8">What do you need to do?</p>
-    <div class="flex flex-col justify-center items-center max-w-lg sm:flex-row">
+    <div class="flex flex-col justify-center items-center max-w-xl sm:flex-row">
       <input
         class="border-white bg-gray-800 text-center rounded text-white text-2xl py-2 m-0 focus:outline-none"
         type="text"
@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     addTodo() {
-      if (this.newTodo) {
+      if (this.newTodo && this.newTodo.trim()) {
         this.$store.commit("addTodo", this.newTodo);
         this.newTodo = "";
       }
